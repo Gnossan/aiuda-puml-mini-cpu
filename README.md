@@ -1,31 +1,39 @@
-# AIuda PUML Mini — vision
+# Aiuda - PlantUML Editor & AI Chat
 
-En lättviktsvariant av [AIuda PUML](https://github.com/Gnossan/aiuda-puml): en app där man kan skriva PlantUML-kod, se en live-förhandsgranskning av diagrammet, och be en inbyggd AI-assistent generera eller förklara diagram utifrån en textbeskrivning.
+A web application for editing PlantUML diagrams with integrated AI assistance.
 
-Detta är en del av ett jämförelseprojekt: samma vision-MVP byggs parallellt i två repon. **Det här repot** byggs av ett CPU-baserat modellteam (gemma4 + qwen3.6), oberoende av varandra via egna issues. Det andra repot, [aiuda-puml-mini-gpu](https://github.com/Gnossan/aiuda-puml-mini-gpu), byggs av en GPU-baserad modell ensam. Koden ska inte kopieras mellan reponen eller från originalet — bara visionen återskapas, oberoende, i båda.
+## Tech Stack
 
-## Vad appen ska kunna göra
+- **Frontend**: React 18 with Vite
+  - Why: Fast development, modern tooling, and excellent DX.
+- **Backend**: Node.js with Express (to be implemented)
+  - Why: Lightweight, JavaScript full-stack compatibility, easy to handle API routes for AI and rendering.
+- **PlantUML Rendering**: Initially using plantuml.com API or local server; will evaluate libraries like `plantuml-encoder`.
+- **AI Integration**: OpenAI API or similar LLM provider for chat-assisted diagram generation.
 
-1. Ta emot PlantUML-källkod och rendera den till en bild (SVG eller PNG).
-2. Visa en editor där man skriver/redigerar PlantUML-kod, med en förhandsgranskning som uppdateras.
-3. Ha ett AI-chattgränssnitt där man kan:
-   - Beskriva ett diagram i fritext och få genererad PlantUML-kod.
-   - Be AI:n förklara ett befintligt diagram.
-4. Stödja minst tre diagramtyper: sekvensdiagram, klassdiagram, use case-diagram.
-5. Kunna exportera det renderade diagrammet som en fil (SVG eller PNG).
+## How to Run Locally
 
-## Vad som INTE krävs i denna version
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Ingen specifik plattform är obligatorisk (webapp, CLI eller skrivbordsapp — fritt val).
-- Ingen draw.io-export.
-- Ingen automatisk uppdateringsmekanism.
-- Inget krav på att bundla en egen Java-runtime — använd valfri tillgänglig PlantUML-renderingsmetod (lokalt installerad, extern tjänst, eller bibliotek).
-- Ingen autentisering/inloggning.
+## Project Structure (Current Skeleton)
+```
+aiuda-puml-mini-cpu/
+├── public/
+├── src/
+│   ├── main.jsx
+│   └── App.jsx
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
 
-## Tekniskt fritt val
-
-Välj själva vilken teknikstack som passar bäst (språk, ramverk, AI-leverantör för chattfunktionen). Dokumentera valet i README när det är gjort.
-
-## Arbetssätt
-
-Arbetet drivs via GitHub Issues, en avgränsad funktion per issue. Issues i det här repot är märkta med vilken modell (`gemma4` eller `qwen3.6`) som äger dem — de två modellerna arbetar oberoende av varandra, ingen formell granskning mellan dem. Se öppna issues för aktuellt arbete.
+Next steps: Implement editor component, AI chat interface, and PlantUML rendering pipeline.
