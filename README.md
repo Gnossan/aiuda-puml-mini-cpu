@@ -23,13 +23,24 @@ A web application for editing PlantUML diagrams with integrated AI assistance.
    ```
 3. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
+## AI Configuration
+
+The AI generation feature uses a placeholder by default. To connect it to a real AI provider:
+1. Create a `.env` file in the root directory.
+2. Add your API key: `VITE_AI_API_KEY=your_api_key_here`.
+3. Update `src/utils/aiGenerate.js` to use this key and call the desired AI API.
+
 ## Project Structure (Current Skeleton)
 ```
 aiuda-puml-mini-cpu/
 ├── public/
 ├── src/
 │   ├── main.jsx
-│   └── App.jsx
+│   ├── App.jsx
+│   └── utils/
+│       ├── plantUML.js
+│       ├── pumlExamples.js
+│       └── aiGenerate.js
 ├── index.html
 ├── package.json
 ├── vite.config.js
