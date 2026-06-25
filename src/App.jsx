@@ -57,17 +57,17 @@ function App() {
   };
 
   return (
-    <div className=\"app\" style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+    <div className="app" style={{ padding: '20px', fontFamily: 'sans-serif' }}>
       <h1>Aiuda - PlantUML Renderer</h1>
 
       <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
         <h3>AI Assistant - Generate Diagram</h3>
         <div style={{ display: 'flex', gap: '10px' }}>
           <input
-            type=\"text\"
+            type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder=\"Describe your diagram (e.g. 'A sequence diagram for a login flow')\"
+            placeholder="Describe your diagram (e.g. 'A sequence diagram for a login flow')"
             style={{ flex: 1, padding: '10px', fontSize: '16px' }}
           />
           <button onClick={handleGenerate} disabled={isGenerating}>
@@ -113,7 +113,7 @@ function App() {
           <h3>Rendered Image</h3>
           <img
             src={getPlantUMLUrl(code)}
-            alt=\"PlantUML Diagram\"
+            alt="PlantUML Diagram"
             style={{ maxWidth: '100%', border: '1px solid #ccc', display: 'block', marginBottom: '10px' }}
           />
           <button onClick={handleExport}>Export as SVG</button>
